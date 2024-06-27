@@ -1,0 +1,52 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=GPHelp.chm
+Contents file=Table of Contents.hhc
+Default Font=宋体,10,134
+Default Window=helpmain
+Default topic=index.html
+Display compile progress=Yes
+Full-text search=Yes
+Index file=Index.hhk
+Language=0x804 中文(中国)
+Title=江湖行GamePaladin 帮助
+
+[WINDOWS]
+helpmain=,"Table of Contents.hhc","Index.hhk","index.html",,"http://www.AdvNetsoft.com/cn/index.html","AdvNetsoft.com",,,0x22520,,0x4304e,,,,,,,,0
+
+
+[FILES]
+VandEMem.html
+AddFileTaskDLG.html
+addSelect.html
+ArchiveEdit.html
+CLSFile_step.html
+CLSMem_step.html
+correctvalue.html
+dataStoreFormat.html
+Filerecord.html
+floatPrecision.html
+FloatType.html
+Gamerecord.html
+history.html
+ImageCapture.html
+In_UnstallSysRequire.html
+index.html
+Input.html
+Introduction.html
+license.html
+LLSFile_step.html
+LLSMem_step.html
+LoadProfile.html
+MemoryScan.html
+Memrecord.html
+MyFavorites.html
+Options.html
+Register.html
+ScanTypes.html
+SelectProcessDialog.html
+TypeLists.html
+VandEFile.html
+
+[INFOTYPES]
+

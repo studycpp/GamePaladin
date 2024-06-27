@@ -1,0 +1,46 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>江湖行GamePaladin 帮助 _ 浮点数据</title>
+</head>
+
+<body>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#C0C0C0" width="100%" height="31">
+  <tr bgcolor="#99ccff"> 
+    <td width="50%" height="31"><font size="2" face="宋体"><b> 江湖行GamePaladin 帮助 
+      _ <strong>浮点数据</strong></b></font></td>
+    <td width="50%" height="31"> <p align="right"><font size="2" color="#0000FF" face="宋体"><b> 
+        <a href="http://www.advnetsoft.com/cn/index.html">www.AdvNetsoft.com</a></b></font></p></td>
+  </tr>
+</table>
+<p><font size="2" face="宋体">以下为摘录的msdn英文资料</font></p>
+<p><font size="2" face="宋体">Floating-point decimal values generally do not have 
+  an exact binary representation. This is a side effect of how the CPU represents 
+  floating point data. For this reason, you may experience some loss of precision, 
+  and some floating-point operations may produce unexpected results.</font></p>
+<p><font size="2" face="宋体">This behavior is the result of one of the following: 
+  </font></p>
+<ul>
+  <li> 
+    <p><font size="2" face="宋体">The binary representation of the decimal number 
+      may not be exact. </font></p>
+  </li>
+</ul>
+<ul>
+  <li> 
+    <p><font size="2" face="宋体">There is a type mismatch between the numbers 
+      used (for example, mixing float and double). </font></p>
+  </li>
+</ul>
+<p><font size="2" face="宋体"> There is a type mismatch between the numbers used 
+  (for example, mixing float and double). <br />
+  To resolve the behavior, most programmers either ensure that the value is greater 
+  or less than what is needed, or they get and use a Binary Coded Decimal (BCD) 
+  library that will maintain the precision.</font></p>
+<p><font size="2" face="宋体">Binary representation of floating-point values affects 
+  the precision and accuracy of floating-point calculations.<br />
+  </font></p>
+<p><font size="2" face="宋体"><strong>参看</strong></font></p>
+<p><font size="2" face="宋体"><a href="floattype.html"><strong>浮点类型</strong></a></font></p>
+</body>
+</html>

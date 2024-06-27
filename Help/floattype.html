@@ -1,0 +1,219 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>江湖行GamePaladin 帮助 _浮点数据</title>
+</head>
+
+<body>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#C0C0C0" width="100%" height="31">
+  <tr bgcolor="#99ccff"> 
+    <td width="50%" height="31"><font size="2" face="宋体"><b> 江湖行GamePaladin 帮助 
+      _<strong>浮点数据</strong></b></font></td>
+    <td width="50%" height="31"> <p align="right"><font size="2" color="#0000FF" face="宋体"><b> 
+        <a href="http://www.advnetsoft.com/cn/index.html">www.AdvNetsoft.com</a></b></font></p></td>
+  </tr>
+</table>
+<p><font size="2" face="宋体">以下为摘录的msdn英文资料(<strong>加入Delphi)<a href="#1">注意！！！</a></strong></font></p>
+<p><font size="2" face="宋体"><strong>IEEE Floating-Point Representation</strong></font></p>
+<p><font size="2" face="宋体">There are three internal varieties of real numbers. 
+  Real*4 and real*8 are used in Visual C++/Delphi.Real*4 is declared using the 
+  word float. Real*8 is declared using the word double. In Windows 32-bit programming, 
+  the long double data type maps to double.There is, however, assembly language 
+  support for computations using the real*10 data type.</font></p>
+<p><font size="2" face="宋体">The values are stored as follows:</font></p>
+<table width="100%" border="1" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#CCCCCC"> 
+    <td width="24%" height="21"><div align="left"><font size="2" face="宋体"><strong>Value</strong></font></div></td>
+    <td width="76%"><div align="left"><font size="2" face="宋体"><strong>Stored 
+        as</strong></font></div></td>
+  </tr>
+  <tr> 
+    <td height="35"><div align="left"><font size="2" face="宋体">real*4</font></div></td>
+    <td><div align="left"><font size="2" face="宋体">sign bit, 8-bit exponent, 
+        23-bit mantissa</font></div></td>
+  </tr>
+  <tr> 
+    <td height="24"><div align="left"><font size="2" face="宋体">real*8</font></div></td>
+    <td><div align="left"><font size="2" face="宋体">sign bit, 11-bit exponent, 
+        52-bit mantissa</font></div></td>
+  </tr>
+  <tr> 
+    <td height="22"><div align="left"><font size="2" face="宋体">real*10</font></div></td>
+    <td><div align="left"><font size="2" face="宋体">sign bit, 15-bit exponent, 
+        64-bit mantissa</font></div></td>
+  </tr>
+</table>
+<p><font size="2" face="宋体">In real*4 and real*8 formats, there is an assumed 
+  leading 1 in the mantissa that is not stored in memory, so the mantissas are 
+  actually 24 or 53 bits, even though only 23 or 52 bits are stored. The real*10 
+  format actually stores this bit.</font></p>
+<p><font size="2" face="宋体">The exponents are biased by half of their possible 
+  value. This means you subtract this bias from the stored exponent to get the 
+  actual exponent. If the stored exponent is less than the bias, it is actually 
+  a negative exponent.</font></p>
+<p><font size="2" face="宋体">The exponents are biased as follows:</font></p>
+<div class="tablediv"> 
+  <table width="56%" border="1" cellpadding="0" cellspacing="0" class="dtTABLE">
+    <tr valign="top"> 
+      <th width="30%" bgcolor="#CCCCCC"> <div align="left"><font size="2" face="宋体">Exponent</font></div></th>
+      <th width="70%" bgcolor="#CCCCCC"> <div align="left"><font size="2" face="宋体">Biased 
+          by</font></div></th>
+    </tr>
+    <tr valign="top"> 
+      <td width="30%"><div align="left"><font size="2" face="宋体">8-bit (real*4)</font></div></td>
+      <td width="70%"><div align="left"><font size="2" face="宋体">127</font></div></td>
+    </tr>
+    <tr valign="top"> 
+      <td width="30%"><div align="left"><font size="2" face="宋体">11-bit (real*8)</font></div></td>
+      <td width="70%"><div align="left"><font size="2" face="宋体">1023</font></div></td>
+    </tr>
+    <tr valign="top"> 
+      <td width="30%"><div align="left"><font size="2" face="宋体">15-bit (real*10)</font></div></td>
+      <td width="70%"><div align="left"><font size="2" face="宋体">16383</font></div></td>
+    </tr>
+  </table>
+</div>
+<p><font size="2" face="宋体">These exponents are not powers of ten; they are powers 
+  of two. That is, 8-bit stored exponents can be up to 127. The value 2**127 is 
+  roughly equivalent to 10**38, which is the actual limit of real*4.</font></p>
+<p><font size="2" face="宋体">The mantissa is stored as a binary fraction of the 
+  form 1.XXX... . This fraction has a value greater than or equal to 1 and less 
+  than 2. Note that real numbers are always stored in normalized form; that is, 
+  the mantissa is left-shifted such that the high-order bit of the mantissa is 
+  always 1. Because this bit is always 1, it is assumed (not stored) in the real*4 
+  and real*8 formats. The binary (not decimal) point is assumed to be just to 
+  the right of the leading 1.</font></p>
+<p><font size="2" face="宋体">The format, then, for the various sizes is as follows:</font></p>
+<div class="tablediv"> 
+  <table width="91%" border="1" cellpadding="0" cellspacing="0" class="dtTABLE">
+    <tr valign="top" bgcolor="#CCCCCC"> 
+      <th width="11%"> <div align="left"><font size="2" face="宋体">Format</font></div></th>
+      <th width="15%"> <div align="left"><font size="2" face="宋体">BYTE 1</font></div></th>
+      <th width="16%"> <div align="left"><font size="2" face="宋体">BYTE 2</font></div></th>
+      <th width="17%"> <div align="left"><font size="2" face="宋体">BYTE 3</font></div></th>
+      <th width="15%"> <div align="left"><font size="2" face="宋体">BYTE 4</font></div></th>
+      <th width="7%"> <div align="left"><font size="2" face="宋体">...</font></div></th>
+      <th width="19%"> <div align="left"><font size="2" face="宋体">BYTE n</font></div></th>
+    </tr>
+    <tr valign="top"> 
+      <td width="11%"><div align="left"><font size="2" face="宋体">real*4</font></div></td>
+      <td width="15%"><div align="left"><font size="2" face="宋体">XXXX XXXX</font></div></td>
+      <td width="16%"><div align="left"><font size="2" face="宋体">XMMM MMMM</font></div></td>
+      <td width="17%"><div align="left"><font size="2" face="宋体">MMMM MMMM</font></div></td>
+      <td width="15%"><div align="left"><font size="2" face="宋体">MMMM MMMM</font></div></td>
+      <td width="7%"><div align="left"></div></td>
+      <td width="19%"><div align="left"></div></td>
+    </tr>
+    <tr valign="top"> 
+      <td width="11%"><div align="left"><font size="2" face="宋体">real*8</font></div></td>
+      <td width="15%"><div align="left"><font size="2" face="宋体">SXXX XXXX</font></div></td>
+      <td width="16%"><div align="left"><font size="2" face="宋体">XXXX MMMM</font></div></td>
+      <td width="17%"><div align="left"><font size="2" face="宋体">MMMM MMMM</font></div></td>
+      <td width="15%"><div align="left"><font size="2" face="宋体">MMMM MMMM</font></div></td>
+      <td width="7%"><div align="left"><font size="2" face="宋体">...</font></div></td>
+      <td width="19%"><div align="left"><font size="2" face="宋体">MMMM MMMM</font></div></td>
+    </tr>
+    <tr valign="top"> 
+      <td width="11%"><div align="left"><font size="2" face="宋体">real*10</font></div></td>
+      <td width="15%"><div align="left"><font size="2" face="宋体">SXXX XXXX</font></div></td>
+      <td width="16%"><div align="left"><font size="2" face="宋体">XXXX XXXX</font></div></td>
+      <td width="17%"><div align="left"><font size="2" face="宋体">1MMM MMMM</font></div></td>
+      <td width="15%"><div align="left"><font size="2" face="宋体">MMMM MMMM</font></div></td>
+      <td width="7%"><div align="left"><font size="2" face="宋体">...</font></div></td>
+      <td width="19%"><div align="left"><font size="2" face="宋体">MMMM MMMM</font></div></td>
+    </tr>
+  </table>
+</div>
+<p><font size="2" face="宋体"><code class="ce">S</code> represents the sign bit, 
+  the <code class="ce">X</code>'s are the exponent bits, and the <code class="ce">M</code>'s 
+  are the mantissa bits. Note that the leftmost bit is assumed in real*4 and real*8 
+  formats, but is present as &quot;1&quot; in BYTE 3 of the real*10 format.</font></p>
+<p><font size="2" face="宋体">To shift the binary point properly, you first unbias 
+  the exponent and then move the binary point to the right or left the appropriate 
+  number of bits.</font></p>
+<p class="dtH4"><font size="2" face="宋体"><strong>Examples</strong></font></p>
+<p><font size="2" face="宋体">The following are some examples in real*4 format: 
+  </font></p>
+<ul type="disc">
+  <li> 
+    <p><font size="2" face="宋体">In the following example, the sign bit is zero, 
+      and the stored exponent is 128, or 100 0000 0 in binary, which is 127 plus 
+      1. The stored mantissa is (1.) 000 0000 ... 0000 0000, which has an implied 
+      leading 1 and binary point, so the actual mantissa is one. </font></p>
+    <font face="Arial">
+    <p class="code"><font size="2" face="宋体"> SXXX XXXX XMMM MMMM ... MMMM MMMM 
+      2 = 1 * 2**1 = 0100 0000 0000 0000 ... 0000 0000 = 4000 0000</font></p>
+    </font></li>
+  <li> 
+    <p><font size="2" face="宋体">Same as +2 except that the sign bit is set. This 
+      is true for all IEEE format floating-point numbers. </font></p>
+    <font face="Arial">
+    <p class="code"><font size="2" face="宋体">-2 = -1 * 2**1 = 1100 0000 0000 
+      0000 ... 0000 0000 = C000 0000</font></p>
+    </font></li>
+  <li> 
+    <p><font size="2" face="宋体">Same mantissa, exponent increases by one (biased 
+      value is 129, or 100 0000 1 in binary. </font></p>
+    <font face="Arial">
+    <p class="code"><font size="2" face="宋体">4 = 1 * 2**2 = 0100 0000 1000 0000 
+      ... 0000 0000 = 4080 0000</font></p>
+    </font></li>
+  <li> 
+    <p><font size="2" face="宋体">Same exponent, mantissa is larger by half &#0151; 
+      it's (1.) 100 0000 ...0000 0000, which, since this is a binary fraction, 
+      is 1 1/2 (the values of the fractional digits are 1/2, 1/4, 1/8, and so 
+      forth). </font></p>
+    <font face="Arial">
+    <p class="code"><font size="2" face="宋体">6 = 1.5 * 2**2 = 0100 0000 1100 
+      0000 ... 0000 0000 = 40C0 0000</font></p>
+    </font></li>
+  <li> 
+    <p><font size="2" face="宋体">Same exponent as other powers of two, mantissa 
+      is one less than two at 127, or 011 1111 1 in binary. </font></p>
+    <font face="Arial">
+    <p class="code"><font size="2" face="宋体">1 = 1 * 2**0 = 0011 1111 1000 0000 
+      ... 0000 0000 = 3F80 0000</font></p>
+    </font></li>
+  <li> 
+    <p><font size="2" face="宋体">The biased exponent is 126, 011 1111 0 in binary, 
+      and the mantissa is (1.) 100 0000 ... 0000 0000, which is 1 1/2. </font></p>
+    <font face="Arial">
+    <p class="code"><font size="2" face="宋体">.75 = 1.5 * 2**-1 = 0011 1111 0100 
+      0000 ... 0000 0000 = 3F40 0000</font></p>
+    </font></li>
+  <li> 
+    <p><font size="2" face="宋体">Exactly the same as two except that the bit that 
+      represents 1/4 is set in the mantissa. </font></p>
+    <font face="Arial">
+    <p class="code"><font size="2" face="宋体">2.5 = 1.25 * 2**1 = 0100 0000 0010 
+      0000 ... 0000 0000 = 4020 0000</font></p>
+    </font></li>
+  <li> 
+    <p><font size="2" face="宋体">1/10 is a repeating fraction in binary. The mantissa 
+      is just shy of 1.6, and the biased exponent says that 1.6 is to be divided 
+      by 16 (it is 011 1101 1 in binary, which is 123 in decimal). The true exponent 
+      is 123 &#0150; 127 = &#0150;4, which means that the factor by which to multiply 
+      is 2**&#0150;4 = 1/16. Note that the stored mantissa is rounded up in the 
+      last bit &#0151; an attempt to represent the unrepresentable number as accurately 
+      as possible. (The reason that 1/10 and 1/100 are not exactly representable 
+      in binary is similar to the reason that 1/3 is not exactly representable 
+      in decimal.) </font></p>
+    <font face="Arial">
+    <p class="code"><font size="2" face="宋体">0.1 = 1.6 * 2**-4 = 0011 1101 1100 
+      1100 ... 1100 1101 = 3DCC CCCD</font></p>
+    </font></li>
+  <li> 
+    <p><font size="2" face="宋体">0 = 1.0 * 2**-128 = all zeros--a special case.</font></p>
+  </li>
+</ul>
+<p class="dtH4">&nbsp;</p>
+<p class="dtH4"><font size="2" face="宋体">江湖行GamePaladin 允许浮点数据的搜索与修改 .<b>参看</b><a href="vandemem.html"><b>内存查看与修改</b></a>.</font></p>
+<p class="dtH4"><font size="2" face="宋体"><strong>参看</strong></font></p>
+<p class="dtH4"><font size="2" face="宋体">For more information on these values, 
+  refer to IEEE Standard for Binary Floating-Point Arithmetic, available on the 
+  Web site <a href="http://www.ieee.org"><strong>http://www.ieee.org</strong></a></font></p>
+<p><font size="2" face="宋体"><a href="floatprecision.html"><strong>浮点类型可能丢失精度</strong></a></font></p>
+<p><font size="2" face="宋体"><strong><a href="typelists.html">数据类型列表</a><a name="1"></a></strong></font></p>
+<p></p>
+</body>
+</html>

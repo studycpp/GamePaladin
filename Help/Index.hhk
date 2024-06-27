@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="¼ò½é">
+		<param name="Name" value="GamePaladin Help_Introduction">
+		<param name="Local" value="Introduction.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ÊäÈë°ïÖú">
+		<param name="Name" value="GamePaladin Help_Input">
+		<param name="Local" value="Input.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ÐÞ¸ÄÓÎÏ·">
+		<param name="Name" value="GamePaladin Help_Memory Common Level Scan Step by Step Guide">
+		<param name="Local" value="CLSMem_step.html">
+		<param name="Name" value="GamePaladin Help_Memory Low Level Scan Step by Step Guide">
+		<param name="Local" value="LLSMem_step.html">
+		<param name="Name" value="GamePaladin Help_ Archive File Common Level Scan Step by Step Guide">
+		<param name="Local" value="CLSFile_step.html">
+		<param name="Name" value="GamePaladin Help_Archive File Low Level Scan Step by Step Guide">
+		<param name="Local" value="LLSFile_step.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ÄÚ´æËÑË÷">
+		<param name="Name" value="GamePaladin Help_Memory Common Level Scan Step by Step Guide">
+		<param name="Local" value="CLSMem_step.html">
+		<param name="Name" value="GamePaladin Help_Memory Low Level Scan Step by Step Guide">
+		<param name="Local" value="LLSMem_step.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ÄÚ´æ±à¼­">
+		<param name="Name" value="GamePaladin Help _ Memory View and Edit">
+		<param name="Local" value="VandEMem.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ÎÄ¼þËÑË÷">
+		<param name="Name" value="GamePaladin Help_ Archive File Common Level Scan Step by Step Guide">
+		<param name="Local" value="CLSFile_step.html">
+		<param name="Name" value="GamePaladin Help_Archive File Low Level Scan Step by Step Guide">
+		<param name="Local" value="LLSFile_step.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ÎÄ¼þ±à¼­">
+		<param name="Name" value="GamePaladin Help _ File View and Edit">
+		<param name="Local" value="VandEFile.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="µÍ½×(Ä£ºý)ËÑË÷">
+		<param name="Name" value="GamePaladin Help_Scan Level Types">
+		<param name="Local" value="ScanTypes.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="¸¡µãÊý">
+		<param name="Name" value="GamePaladin Help _ Floating-Point Numbers">
+		<param name="Local" value="FloatType.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="×¢²á">
+		<param name="Name" value="GamePaladin Help_ Register">
+		<param name="Local" value="Register.html">
+		</OBJECT>
+</UL>
+</BODY></HTML>
